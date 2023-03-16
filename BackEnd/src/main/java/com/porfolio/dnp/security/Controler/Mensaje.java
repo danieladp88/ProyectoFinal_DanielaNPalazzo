@@ -8,7 +8,7 @@ package com.porfolio.dnp.security.Controler;
 public class Mensaje {
     private String mensaje;
     
-    //Constructores
+    //Constructor
 
     public Mensaje() {
     }
@@ -16,8 +16,7 @@ public class Mensaje {
     public Mensaje(String mensaje) {
         this.mensaje = mensaje;
     }
-    
-    //Getter and Setters
+    //Getter y Setter
 
     public String getMensaje() {
         return mensaje;

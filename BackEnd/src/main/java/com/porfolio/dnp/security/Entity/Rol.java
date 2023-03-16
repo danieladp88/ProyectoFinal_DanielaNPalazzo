@@ -10,22 +10,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-/**
- *
- * @author Daniela
- */
 @Entity
 public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
     @NotNull
     @Enumerated(EnumType.STRING)
     private RolNombre rolNombre;
     
-    //constructor
-
+    //Constructor
     public Rol() {
     }
 
@@ -33,7 +27,7 @@ public class Rol {
         this.rolNombre = rolNombre;
     }
     
-    //Geters y Seters
+    //Getter y Setter
 
     public int getId() {
         return id;
@@ -50,5 +44,6 @@ public class Rol {
     public void setRolNombre(RolNombre rolNombre) {
         this.rolNombre = rolNombre;
     }
+    
     
 }

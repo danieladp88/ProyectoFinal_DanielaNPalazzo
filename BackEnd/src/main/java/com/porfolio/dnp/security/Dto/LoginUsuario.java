@@ -1,21 +1,20 @@
 
 package com.porfolio.dnp.security.Dto;
 
+
 import javax.validation.constraints.NotBlank;
 
 /**
  *
- * @author Daniela
+ * @author Usuario
  */
 public class LoginUsuario {
     @NotBlank
     private String nombreUsuario;
-    
     @NotBlank
     private String password;
     
-    
-    //Getter and Setters
+    //Getter & Setter
 
     public String getNombreUsuario() {
         return nombreUsuario;

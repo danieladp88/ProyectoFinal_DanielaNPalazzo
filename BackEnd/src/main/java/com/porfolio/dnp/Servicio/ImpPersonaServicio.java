@@ -5,40 +5,43 @@ import com.porfolio.dnp.Entidad.Persona;
 import com.porfolio.dnp.Interface.IPersonaServicio;
 import com.porfolio.dnp.Repositorio.IPersonaRepositorio;
 import java.util.List;
+import java.util.Optional;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-
-/**
- *
- * @author Daniela
- */
 @Service
-public class ImpPersonaServicio implements IPersonaServicio{
+@Transactional
+public class ImpPersonaServicio {
 
-    @Autowired IPersonaRepositorio ipersonaRepositorio;
-    @Override
-    public List<Persona> getPersona() {
-        List<Persona> persona = ipersonaRepositorio.findAll();
-        return persona;
-    }
-
-    @Override
-    public void savePersona(Persona persona) {
-        ipersonaRepositorio.save(persona);
-   }
-
-    @Override
-    public void deletePersona(Long id) {
-        ipersonaRepositorio.deleteById(id);
-    }
-
-    @Override
-    public Persona findPersona(Long id) {
-        Persona persona = ipersonaRepositorio.findById(id).orElse(null);
-        return persona;
+    @Autowired
+    IPersonaRepositorio ipersonaRepository;
     
-    }
-    
+    public List<Persona> list(){
+         return ipersonaRepository.findAll();
+     }
+     
+     public Optional<Persona> getOne(int id){
+         return ipersonaRepository.findById(id);
+     }
+     
+     public Optional<Persona> getByNombre(String nombre){
+         return ipersonaRepository.findByNombre(nombre);
+     }
+     
+     public void save(Persona persona){
+         ipersonaRepository.save(persona);
+     }
+     
+     public void delete(int id){
+         ipersonaRepository.deleteById(id);
+     }
+     
+     public boolean existsById(int id){
+         return ipersonaRepository.existsById(id);
+     }
+     
+     public boolean existsByNombre(String nombre){
+         return ipersonaRepository.existsByNombre(nombre);
+     }
 }

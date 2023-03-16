@@ -10,12 +10,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 /**
  *
- * @author Daniela
+ * @author Usuario
  */
 public class UsuarioPrincipal implements UserDetails {
 
-    public UsuarioPrincipal(String nombre1, String nombreUsuario1, String email1, String password1, List<GrantedAuthority> authorities1) {
-    }
     private String nombre;
     private String nombreUsuario;
     private String email;
@@ -23,6 +21,14 @@ public class UsuarioPrincipal implements UserDetails {
     private Collection<? extends GrantedAuthority> authorities;
 
     //Constructor
+    public UsuarioPrincipal(String nombre, String nombreUsuario, String email, String password, Collection<? extends GrantedAuthority> authorities) {
+        this.nombre = nombre;
+        this.nombreUsuario = nombreUsuario;
+        this.email = email;
+        this.password = password;
+        this.authorities = authorities;
+    }
+
     public static UsuarioPrincipal build(Usuario usuario) {
         List<GrantedAuthority> authorities = usuario.getRoles().stream()
                 .map(rol -> new SimpleGrantedAuthority(rol.getRolNombre().name())).collect(Collectors
@@ -73,4 +79,5 @@ public class UsuarioPrincipal implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
 }
