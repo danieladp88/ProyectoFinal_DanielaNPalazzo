@@ -46,8 +46,7 @@ import { EditAcercaDeComponent } from './componentes/acerca-de/edit-acerca-de.co
     EditeducacionComponent,
     EditSkillComponent,
     NewSkillComponent,
-    EditAcercaDeComponent,
-   
+    EditAcercaDeComponent
   ],
   imports: [
     BrowserModule,
