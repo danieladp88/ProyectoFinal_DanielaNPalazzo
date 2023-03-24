@@ -26,6 +26,7 @@ export class ImageService {
         console.log("La URL e: " + this.url);
       }
     })
+    .catch(error => console.log(error))
   }
 
 }

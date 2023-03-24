@@ -2,7 +2,6 @@
 package com.porfolio.dnp.Servicio;
 
 import com.porfolio.dnp.Entidad.Persona;
-import com.porfolio.dnp.Interface.IPersonaServicio;
 import com.porfolio.dnp.Repositorio.IPersonaRepositorio;
 import java.util.List;
 import java.util.Optional;
